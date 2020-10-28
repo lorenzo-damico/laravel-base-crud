@@ -5,6 +5,7 @@
     <title>Index</title>
   </head>
   <body>
+    
     @foreach ($books as $book)
 
       <div>

@@ -12,7 +12,7 @@
 
       <div>
         <label for="titolo">Titolo</label>
-        <input type="text" name="title" value="" placeholder="Titolo" id="titolo">
+        <input type="text" name="title" id="titolo" placeholder="Titolo">
       </div>
 
       <div>
@@ -37,7 +37,7 @@
 
       <div>
         <label for="year">Anno</label>
-        <input type="date" name="year" id="year" placeholder="year">
+        <input type="date" name="year" id="year" placeholder="Anno">
       </div>
 
       <div>
@@ -49,10 +49,20 @@
         <label for="pages">Numero pagine</label>
         <input type="number" name="pages" id="pages" placeholder="Numero pagine">
       </div>
-      
-      <input type="submit" name="" value="Salva">
+
+      <input type="submit" value="Salva">
 
     </form>
+
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+        </ul>
+      </div>
+    @endif
 
   </body>
 </html>
