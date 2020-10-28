@@ -17,5 +17,11 @@
       <img src="{{$book->image}}" alt="copertina libro">
     </ul>
 
+    <form action="{{route('books.destroy', $book)}}" method="POST">
+      @csrf
+      @method('DELETE')
+      <input type="submit" value="Elimina">
+    </form>
+
   </body>
 </html>
