@@ -62,6 +62,8 @@ class BookController extends Controller
 
         $book->save();
 
+        return redirect()->route('books.show', $book);
+
     }
 
     /**
@@ -72,7 +74,9 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book::find($id);
+
+        return view('show', compact('book'));
     }
 
     /**
